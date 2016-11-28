@@ -45,6 +45,12 @@ class CorsService
      */
     public function getCorsHeaders(Request $request)
     {
+        $origin = '*';
+
+        if ($request->headers->has('Origin')) {
+            $origin = $request->headers->get('Origin');
+        }
+
         $headers = 'Authorization, X-Requested-With, X-Auth-Token, Content-Type';
 
         if ($request->headers->has('Access-Control-Request-Headers')) {
@@ -58,7 +64,7 @@ class CorsService
         }
 
         return [
-            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Origin' => $origin,
             'Access-Control-Allow-Methods' => $methods,
             'Access-Control-Allow-Headers' => $headers,
             'Access-Control-Allow-Credentials' => 'true',
