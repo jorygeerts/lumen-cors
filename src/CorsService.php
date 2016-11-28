@@ -68,6 +68,7 @@ class CorsService
             'Access-Control-Allow-Methods' => $methods,
             'Access-Control-Allow-Headers' => $headers,
             'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Max-Age' => config('app.cors.max_age', 0),
         ];
     }
 }
