@@ -36,6 +36,13 @@ $app->middleware([
 
 And that is it!
 
+## Configuration options
+Support for `Max-Age` is present by setting the configuration option `app.cors.max_age`.
+The value should be the number of seconds for which the response will remain valid.
+
+Support for `Expose-Headers` is present trough the `app.cors.expose_headers` configuration option.
+It should contain an array with header names.
+
 # Considerations
 
 That package stands to be free of configurations, then if you want a more
