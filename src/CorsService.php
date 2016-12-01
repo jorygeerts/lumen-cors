@@ -69,7 +69,8 @@ class CorsService
             'Access-Control-Allow-Headers' => $headers,
             'Access-Control-Allow-Credentials' => 'true',
             'Access-Control-Max-Age' => config('app.cors.max_age', 0),
-            'Access-Control-Expose-Headers' => implode(', ', config('app.cors.expose_headers', []))
+            'Access-Control-Expose-Headers' => implode(', ', config('app.cors.expose_headers', [])),
+            'Vary' => 'Origin'
         ];
     }
 }
